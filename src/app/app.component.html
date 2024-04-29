@@ -1,11 +1,26 @@
-<div class="d-flex flex-column justify-content-around">
+<div class="d-flex flex-column justify-content-between vh-100">
   <app-header></app-header>
 
   <div class="container d-flex flex-column align-items-center my-2">
-    <h1 class="text-white">Profile Info</h1>
-    <app-card></app-card>
+    <h3 class="text-white">Click below to see or hide profile</h3>
+    <button class="btn btn-primary" (click)="showProfile = !showProfile">{{showProfile ? 'Hide Profile' : 'Show
+      Profile'}}</button>
+    <div *ngIf="showProfile">
+      <app-card></app-card>
+    </div>
+  </div>
+
+  <div [ngSwitch]="role">
+    <div *ngSwitchCase="'Admin'" class="text-white text-center">Welcome Alan</div>
+    <div *ngSwitchCase="'User'" class="text-white text-center">Welcome User</div>
+    <div *ngSwitchDefault class="text-white text-center">Not Authorized</div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div *ngFor="let color of colors">
+      <button class="btn btn-{{color}}">{{color}}</button>
+    </div>
   </div>
 
   <app-footer></app-footer>
-
 </div>
