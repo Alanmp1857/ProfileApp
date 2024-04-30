@@ -2,10 +2,11 @@
     <div class="row g-0">
         <div class="col-md-8">
             <div class="card-body">
+                <input type="text" [(ngModel)]="title">
+                <h5 class="text-white">{{title}}</h5>
                 <h5 class="card-title text-white">{{name}}</h5>
                 <p class="card-text text-white">{{description}}</p>
                 <h6 class="text-white">Working at: {{companyName}}</h6>
-                <h6 class="text-white">Location: {{location}} </h6>
                 <h6 class="text-white">Role: {{role}}</h6>
                 <h6 class="text-white">GitHub Link: <a target="_blank" href="https://github.com/Alanmp1857">here</a>
                 </h6>
